@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jobbly — Job applications, answered</title>
+<meta name="description" content="Jobbly is a Chrome extension that fills out job applications for you and uses AI to answer screening questions — so you can apply to more roles in less time.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="/" class="nav-brand"><img src="assets/logo.png" alt=""> Jobbly</a>
+    <ul class="nav-links">
+      <li><a href="#how-it-works">How it works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#" class="nav-cta">Add to Chrome</a>
+  </div>
+</nav>
+
+<header class="hero" id="hero">
+  <div class="hero-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="hero-spotlight" aria-hidden="true"></div>
+  <div class="wrap">
+    <div data-reveal="left">
+      <span class="eyebrow eyebrow-glow">Free to start</span>
+      <h1>Job applications,<br><span>answered.</span></h1>
+      <p class="lead">Jobbly fills out job application forms for you and uses AI to answer the screening questions — so you apply to more roles in less time, without retyping the same thing for the hundredth time.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary">Add to Chrome — Free →</a>
+      </div>
+      <p class="hero-note" style="margin-top:14px">No credit card required. Works on Indeed, SEEK, and Jora.</p>
+    </div>
+    <div class="form-mock-wrap" data-reveal="right">
+      <div class="form-mock" aria-hidden="true">
+        <div class="form-mock-head">
+          <span class="form-mock-dot"></span><span class="form-mock-dot"></span><span class="form-mock-dot"></span>
+          <span class="form-mock-title" id="mockJobTitle">Application — Support Coordinator</span>
+        </div>
+        <div class="form-field f1"><label>Full name <span class="check">✓</span></label><div class="box"><div class="fill"></div></div></div>
+        <div class="form-field f2"><label>Email <span class="check">✓</span></label><div class="box"><div class="fill"></div></div></div>
+        <div class="form-field f3"><label>Phone <span class="check">✓</span></label><div class="box"><div class="fill"></div></div></div>
+        <div class="form-field f4"><label>Why do you want this role? <span class="check">✓</span></label><div class="box"><div class="fill"></div></div></div>
+        <div class="form-mock-btn">Review answers →</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="how-it-works">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">How it works</span>
+      <h2>Three steps, and you're always the one who hits submit</h2>
+      <p>Jobbly fills the form. You review it. You decide when it's ready.</p>
+    </div>
+    <div class="steps-alt">
+
+      <div class="step-row">
+        <div class="step-row-text" data-reveal="left">
+          <div class="step-num">1</div>
+          <h3>Upload your resume once</h3>
+          <p>Jobbly reads it and builds your profile automatically — name, contact details, work history, education, skills. Review and correct anything before it's saved, then it's ready for every application from then on.</p>
+        </div>
+        <div class="step-visual" data-reveal="right">
+          <div class="sv-upload">
+            <div class="sv-upload-icon">📄</div>
+            <div class="sv-upload-label">resume.pdf</div>
+            <div class="sv-upload-bar"><div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-row-text" data-reveal="left">
+          <div class="step-num">2</div>
+          <h3>Open any job application</h3>
+          <p>Jobbly detects the form and fills what it can — direct facts from your profile, plus AI-written answers for open-ended questions, written specifically for that job, not a generic template.</p>
+        </div>
+        <div class="step-visual sv-detect" data-reveal="right">
+          <div class="form-mock" style="animation:none">
+            <div class="form-mock-head">
+              <span class="form-mock-dot"></span><span class="form-mock-dot"></span><span class="form-mock-dot"></span>
+              <span class="form-mock-title">Detecting form fields…</span>
+            </div>
+            <div class="form-field"><label>Full name <span class="check" style="opacity:1;transform:none">✓</span></label><div class="box"><div class="fill" style="width:100%;animation:none"></div></div></div>
+            <div class="form-field"><label>Years of experience <span class="check" style="opacity:1;transform:none">✓</span></label><div class="box"><div class="fill" style="width:100%;animation:none"></div></div></div>
+            <div class="form-field f4"><label>Describe a time you solved a problem</label><div class="box"><div class="fill"></div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-row-text" data-reveal="left">
+          <div class="step-num">3</div>
+          <h3>Review, then submit yourself</h3>
+          <p>Every answer is shown to you before anything goes anywhere. Jobbly never presses the final Submit button — that's always your call, every time.</p>
+        </div>
+        <div class="step-visual sv-review" data-reveal="right">
+          <div class="review-row"><span class="rdot">✓</span><span class="rtext">Full name</span><span class="rval">Confirmed</span></div>
+          <div class="review-row"><span class="rdot">✓</span><span class="rtext">Email &amp; phone</span><span class="rval">Confirmed</span></div>
+          <div class="review-row"><span class="rdot">✓</span><span class="rtext">Screening question</span><span class="rval">AI-written</span></div>
+          <div class="submit-btn">Submit application</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section features" id="features">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Built for real job hunting</span>
+      <h2>Everything you need to apply faster</h2>
+      <p>Not a gimmick — the features that actually save time on a real job search.</p>
+    </div>
+    <div class="feature-grid" data-reveal-group>
+      <div class="feature-card" data-reveal><div class="icon">⚡</div><h3>Works where jobs actually live</h3><p>Indeed, SEEK, and Jora today, with more platforms on the way.</p></div>
+      <div class="feature-card" data-reveal><div class="icon">✦</div><h3>AI-answered screening questions</h3><p>No more staring at "Why do you want to work here?" for the tenth time this week.</p></div>
+      <div class="feature-card" data-reveal><div class="icon">📎</div><h3>Resume attached automatically</h3><p>Upload once — it's ready to attach to every application from then on.</p></div>
+      <div class="feature-card" data-reveal><div class="icon">📊</div><h3>Real application tracking</h3><p>See what you've actually applied to, not just what you've looked at.</p></div>
+      <div class="feature-card" data-reveal><div class="icon">🔒</div><h3>Works without an account</h3><p>Everything runs locally in your browser by default. Sign in only if you want it synced across devices.</p></div>
+      <div class="feature-card" data-reveal><div class="icon">✓</div><h3>You're always in control</h3><p>Jobbly fills the form. You review it. You submit it. Every time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Pricing</span>
+      <h2>Start free. Upgrade only if you need to.</h2>
+      <p>Cancel or switch plans any time — no lock-in.</p>
+    </div>
+    <div class="plan-grid" data-reveal-group>
+      <div class="plan" data-tier="free" data-reveal>
+        <div class="plan-name">Free</div>
+        <div class="plan-price">$0<span>/month</span></div>
+        <div class="plan-tag">10 AI answers a day</div>
+        <ul class="plan-features">
+          <li>Full autofill for profile fields</li>
+          <li>Application tracking</li>
+          <li>Works without an account</li>
+        </ul>
+        <a href="#" class="plan-btn">Get started</a>
+      </div>
+      <div class="plan" data-tier="beginner" data-reveal>
+        <div class="plan-name">Beginner</div>
+        <div class="plan-price">$5<span>/month</span></div>
+        <div class="plan-tag">150 AI answers a day</div>
+        <ul class="plan-features">
+          <li>Enough for a genuinely active daily job search</li>
+          <li>Everything in Free</li>
+          <li>Cancel any time, no lock-in</li>
+        </ul>
+        <a href="#" class="plan-btn">Choose Beginner</a>
+      </div>
+      <div class="plan featured" data-tier="pro" data-reveal>
+        <span class="plan-badge">Most popular</span>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">$10<span>/month</span></div>
+        <div class="plan-tag">350 AI answers a day</div>
+        <ul class="plan-features">
+          <li>Apply at real volume without hitting a wall</li>
+          <li>Built for a serious, fast-moving job search</li>
+          <li>Cancel or switch plans any time</li>
+        </ul>
+        <a href="#" class="plan-btn">Choose Pro</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Questions</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list" data-reveal>
+      <div class="faq-item">
+        <button class="faq-q"><span>Does Jobbly submit applications automatically?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>No. Jobbly fills the form and generates answers, but you always review everything and click Submit yourself. It never submits on your behalf.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Which job sites does it work on?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Indeed, SEEK, and Jora today, with more platforms being added over time.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Do I need an account?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>No. Jobbly works entirely locally in your browser by default. Creating an account is optional and only needed if you want your profile synced across devices.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>What happens if I run out of AI answers for the day?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>You can still fill in the direct, factual parts of any form — name, contact details, and so on. Only AI-generated answers to open-ended questions are capped by plan, and the limit resets daily.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Can I cancel any time?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Yes, any time from your dashboard — no lock-in, and you keep access through the period you're already on.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>What if I upgrade or downgrade my plan?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Upgrades apply right away. Downgrades take effect at your next renewal, so you keep your current plan until then.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Is my resume and personal data safe?</span><span class="plus"></span></button>
+        <div class="faq-a"><p>Your data stays local on your own device by default. If you create an account to sync across devices, it's access-controlled so only you can ever retrieve your files.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Get in touch</span>
+      <h2>Questions, feedback, or just want to say hi?</h2>
+      <p>Send a message and we'll get back to you at your email.</p>
+    </div>
+    <form class="contact-form" id="contactForm" data-reveal>
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New message from jobbly.au contact form">
+      <div class="contact-row">
+        <label>Your name<input type="text" name="name" required></label>
+        <label>Your email<input type="email" name="email" required></label>
+      </div>
+      <label>Message<textarea name="message" rows="5" required></textarea></label>
+      <button type="submit" class="btn-primary contact-submit">Send message →</button>
+      <p class="contact-status" id="contactStatus"></p>
+    </form>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap" data-reveal>
+    <h2>Stop retyping your resume into every form.</h2>
+    <p>Add Jobbly to Chrome and see it fill your next application in seconds.</p>
+    <a href="#" class="btn-primary">Add to Chrome — Free →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="/" class="footer-brand"><img src="assets/logo.png" alt=""> Jobbly</a>
+    <ul class="footer-links">
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+      <li><a href="mailto:hello@jobbly.au">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© <span id="year"></span> Jobbly. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Scroll-reveal: fade/slide elements in once they enter the viewport.
+// Respects prefers-reduced-motion via the CSS rule that removes the
+// opacity-0 starting state entirely for that case.
+const revealEls = document.querySelectorAll('[data-reveal]');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// Nav gains a solid background + shadow once the page is scrolled past the hero.
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Contact form — submits via fetch so the page never navigates away, with a
+// real inline success/error message instead of just hoping it worked.
+const contactForm = document.getElementById('contactForm');
+const contactStatus = document.getElementById('contactStatus');
+contactForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = contactForm.querySelector('.contact-submit');
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  contactStatus.className = 'contact-status';
+  contactStatus.textContent = '';
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+    });
+    const data = await res.json();
+    if (data.success) {
+      contactStatus.textContent = "Thanks — we'll get back to you soon.";
+      contactStatus.classList.add('ok');
+      contactForm.reset();
+    } else {
+      throw new Error(data.message || 'Something went wrong');
+    }
+  } catch (err) {
+    contactStatus.textContent = "Couldn't send that — try emailing hello@jobbly.au directly instead.";
+    contactStatus.classList.add('err');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = originalText;
+  }
+});
+
+// FAQ accordion — only one open at a time.
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Live cursor-reactive glow — the spotlight's position tracks the mouse
+// wherever it moves within the hero.
+const hero = document.getElementById('hero');
+hero.addEventListener('mousemove', (e) => {
+  const rect = hero.getBoundingClientRect();
+  hero.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width) * 100 + '%');
+  hero.style.setProperty('--my', ((e.clientY - rect.top) / rect.height) * 100 + '%');
+});
+
+// Rotating job titles in the hero mockup — shows Jobbly isn't built for one
+// narrow role. Picks randomly (never repeating the last one back-to-back)
+// rather than cycling in a fixed order, so it reads as varied rather than
+// mechanical.
+const jobTitles = [
+  "Support Coordinator","Software Engineer","Registered Nurse","Marketing Manager","Data Analyst",
+  "Warehouse Associate","Executive Assistant","Sales Representative","Graphic Designer","Customer Service Representative",
+  "Project Manager","Accountant","HR Coordinator","Operations Manager","Physical Therapist",
+  "Retail Associate","Electrician","Financial Analyst","UX Designer","Content Writer",
+  "Product Manager","Primary School Teacher","Paralegal","Social Worker","Chef",
+  "Plumber","Delivery Driver","Dental Hygienist","IT Support Specialist","Business Analyst",
+  "Recruiter","Bookkeeper","Veterinary Technician","Mechanical Engineer","Copywriter",
+  "Store Manager","Administrative Assistant","Personal Trainer","Pharmacy Technician","Civil Engineer",
+  "Event Coordinator","Flight Attendant","Real Estate Agent","Paramedic","Laboratory Technician",
+  "Architect","Barista","Web Developer","Data Scientist","Nurse Practitioner",
+  "Legal Assistant","Machine Operator","Quality Assurance Analyst","Network Administrator","Occupational Therapist",
+  "Insurance Agent","Loan Officer","Truck Driver","Security Guard","Landscaper",
+  "Photographer","Journalist","Video Editor","Social Media Manager","SEO Specialist",
+  "Supply Chain Analyst","Construction Manager","Welder","Automotive Technician","Dietitian",
+  "Speech Pathologist","Radiologic Technologist","Firefighter","Librarian","Museum Curator",
+  "Translator","Court Reporter","Statistician","Urban Planner","Environmental Scientist",
+  "Marine Biologist","Park Ranger","Air Traffic Controller","Locksmith","HVAC Technician",
+  "Roofer","Carpenter","Painter","Florist","Baker",
+  "Sommelier","Yoga Instructor","Massage Therapist","Hair Stylist","Fashion Designer",
+  "Interior Designer","Game Developer","Systems Administrator","Cybersecurity Analyst","Cloud Engineer",
+  "DevOps Engineer","Solutions Architect","Scrum Master","Business Development Manager","Account Executive",
+  "Customer Success Manager","Talent Acquisition Specialist","Compliance Officer","Risk Analyst","Claims Adjuster",
+  "Tax Preparer","Auditor","Investment Analyst","Portfolio Manager","Mortgage Broker"
+];
+const titleEl = document.getElementById('mockJobTitle');
+const prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let lastTitle = "Support Coordinator";
+function nextTitle() {
+  let t;
+  do { t = jobTitles[Math.floor(Math.random() * jobTitles.length)]; } while (t === lastTitle);
+  lastTitle = t;
+  return t;
+}
+setInterval(() => {
+  if (prefersReducedMotion) {
+    titleEl.textContent = `Application — ${nextTitle()}`;
+    return;
+  }
+  titleEl.classList.add('swap');
+  setTimeout(() => {
+    titleEl.textContent = `Application — ${nextTitle()}`;
+    titleEl.classList.remove('swap');
+  }, 250);
+}, 2600);
+</script>
+</body>
+</html>
