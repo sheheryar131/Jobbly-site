@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Payment successful — Jobbly</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap">
+    <a href="/" class="nav-brand"><img src="assets/logo.png" alt=""> Jobbly</a>
+  </div>
+</nav>
+<div style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:60px 20px">
+  <div style="max-width:440px;text-align:center">
+    <div style="width:64px;height:64px;border-radius:50%;background:#e7f7ee;color:#18794e;display:grid;place-items:center;margin:0 auto 22px;font-size:30px;font-weight:900">✓</div>
+    <h1 id="successTitle" style="font-size:24px;margin-bottom:12px">You're all set</h1>
+    <p style="color:#667085;font-size:15px;line-height:1.6">Close this tab and open the Jobbly extension. If your new plan doesn't show up right away, give it a few seconds and refresh the dashboard tab — it updates automatically once it's ready.</p>
+  </div>
+</div>
+<script>
+  var plan = new URLSearchParams(window.location.search).get('plan');
+  if (plan) {
+    var name = plan.charAt(0).toUpperCase() + plan.slice(1);
+    document.getElementById('successTitle').textContent = "You're now on " + name + "!";
+  }
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "CLOUDFLARE_ANALYTICS_TOKEN"}'></script>
+</body>
+</html>
