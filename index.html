@@ -7,6 +7,20 @@
 <meta name="description" content="Jobbly is a Chrome extension that fills out job applications for you and uses AI to answer screening questions — so you can apply to more roles in less time.">
 <link rel="icon" href="assets/logo.png">
 <link rel="stylesheet" href="styles.css">
+<script>
+// Supabase's auth redirects sometimes land on the Site URL (this homepage)
+// rather than the specific page requested, even when that page is correctly
+// on the redirect allow-list — this catches both the recovery-link and
+// error cases here and forwards to the right page immediately, with the
+// same data intact, rather than continuing to fight Supabase's redirect
+// matching. Runs before the page visibly renders.
+(function(){
+  var hash = window.location.hash;
+  if(hash.indexOf("type=recovery") !== -1 || (hash.indexOf("error=") !== -1 && hash.indexOf("otp_expired") !== -1)){
+    window.location.replace("/reset-password.html" + hash);
+  }
+})();
+</script>
 </head>
 <body>
 
