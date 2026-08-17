@@ -18,6 +18,8 @@
   var hash = window.location.hash;
   if(hash.indexOf("type=recovery") !== -1 || (hash.indexOf("error=") !== -1 && hash.indexOf("otp_expired") !== -1)){
     window.location.replace("/reset-password.html" + hash);
+  }else if(hash.indexOf("type=signup") !== -1){
+    window.location.replace("/email-confirmed.html" + hash);
   }
 })();
 </script>
