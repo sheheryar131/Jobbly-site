@@ -57,8 +57,9 @@ img{max-width:100%;display:block}
 /* Signature: animated mock application form */
 .form-mock{background:#fff;border-radius:18px;padding:26px;box-shadow:0 30px 70px rgba(4,8,20,.5);color:var(--ink)}
 .form-mock-head{display:flex;align-items:center;gap:9px;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid #edf0f5}
-.form-mock-dot{width:9px;height:9px;border-radius:50%;background:#e2e6ee}
-.form-mock-title{font-size:12.5px;font-weight:700;color:var(--muted);margin-left:2px;transition:opacity .25s ease}
+.form-mock-icon{font-size:16px;transition:opacity .25s ease,transform .25s ease}
+.form-mock-icon.swap{opacity:0;transform:scale(.7)}
+.form-mock-title{font-size:12.5px;font-weight:700;color:var(--muted);margin-left:2px;transition:opacity .25s ease;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}
 .form-mock-title.swap{opacity:0}
 .form-field{margin-bottom:14px}
 .form-field label{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:6px}
@@ -217,36 +218,54 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--blue-light);transition:width .25s ease}
 .nav-links a:hover::after{width:100%}
 
-/* ---- Alternating "how it works" steps ---- */
-.steps-alt{display:flex;flex-direction:column;gap:80px}
-.step-row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.step-row:nth-child(even) .step-visual{order:2}
-.step-row-text .step-num{font-family:'Space Grotesk';font-size:14px;font-weight:700;color:var(--blue);background:#eaf0ff;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;margin-bottom:18px}
-.step-row-text h3{font-size:24px;margin-bottom:12px}
-.step-row-text p{color:var(--muted);font-size:15.5px;line-height:1.65}
-.step-visual{background:#fff;border:1px solid #e4e8f0;border-radius:18px;padding:28px;box-shadow:0 20px 50px rgba(28,42,74,.08);transition:transform .3s ease}
+/* ---- "How it works" — 3-column flow with connecting arrows ---- */
+.steps-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:20px;align-items:start}
+.step-col{text-align:left}
+.step-col .step-num{font-family:'Space Grotesk';font-size:14px;font-weight:700;color:var(--blue);background:#eaf0ff;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;margin-bottom:16px}
+.step-col h3{font-size:18px;margin-bottom:8px}
+.step-col p{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:18px}
+.step-arrow{color:#c7d0e6;font-size:22px;padding-top:120px;font-weight:700}
+.step-visual{background:#fff;border:1px solid #e4e8f0;border-radius:18px;padding:24px;box-shadow:0 20px 50px rgba(28,42,74,.08);transition:transform .3s ease}
 .step-visual:hover{transform:translateY(-4px)}
 
 /* Visual 1: resume upload */
-.sv-upload{display:flex;flex-direction:column;align-items:center;gap:14px;padding:30px 20px}
-.sv-upload-icon{width:56px;height:56px;border-radius:16px;background:#eaf0ff;display:grid;place-items:center;font-size:24px}
-.sv-upload-bar{width:100%;height:10px;border-radius:6px;background:#eef0f5;overflow:hidden}
+.sv-upload{display:flex;flex-direction:column;align-items:center;gap:12px;padding:22px 14px}
+.sv-upload-icon{width:48px;height:48px;border-radius:14px;background:#eaf0ff;display:grid;place-items:center;font-size:20px}
+.sv-upload-bar{width:100%;height:9px;border-radius:6px;background:#eef0f5;overflow:hidden}
 .sv-upload-bar div{height:100%;width:0;background:linear-gradient(90deg,var(--blue-light),var(--blue));border-radius:6px}
 [data-reveal].is-visible .sv-upload-bar div{animation:fillIn 1.6s .3s ease forwards}
-.sv-upload-label{font-size:12.5px;color:var(--muted);font-weight:700}
+.sv-upload-label{font-size:12px;color:var(--muted);font-weight:700}
+.sv-upload-done{font-size:11.5px;color:#18794e;font-weight:700;background:#e7f7ee;padding:6px 10px;border-radius:7px;opacity:0}
+[data-reveal].is-visible .sv-upload-done{animation:fadeInUp .4s 1.9s ease forwards}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 
-/* Visual 2: form detection */
-.sv-detect .form-mock{animation:none}
-.sv-detect{padding:0}
+/* Visual 2: Jobbly's own detection panel — generic browser-agnostic mockup,
+   not modeled on any specific job site's actual branding/UI. */
+.sv-detect-panel{padding:18px}
+.sv-panel-head{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #edf0f5}
+.sv-panel-head .form-mock-icon{font-size:14px}
+.sv-toggle{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;color:var(--blue)}
+.sv-toggle-pill{width:26px;height:15px;border-radius:999px;background:var(--blue);position:relative;flex-shrink:0}
+.sv-toggle-pill span{position:absolute;top:2px;right:2px;width:11px;height:11px;border-radius:50%;background:#fff}
+.sv-detect-panel .review-row{padding:8px 0}
+.sv-detect-panel .review-row.pending .rdot{background:#f2f4f8;color:#98a2b3}
+.sv-detect-panel .review-row.pending .rtext{color:#98a2b3}
+.sv-trust-note{margin-top:12px;font-size:11px;color:var(--muted);background:#f7f8fc;border-radius:8px;padding:8px 10px;text-align:center}
 
 /* Visual 3: review checklist */
-.sv-review{padding:28px}
-.review-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #f0f2f6}
+.sv-review{padding:22px}
+.review-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #f0f2f6}
 .review-row:last-child{border-bottom:none}
-.review-row .rdot{width:20px;height:20px;border-radius:50%;background:#e7f7ee;color:#18794e;font-size:11px;font-weight:900;display:grid;place-items:center;flex-shrink:0}
-.review-row .rtext{font-size:13px;color:var(--ink);font-weight:600}
-.review-row .rval{font-size:12px;color:var(--muted);margin-left:auto}
-.sv-review .submit-btn{margin-top:16px;background:var(--blue);color:#fff;text-align:center;padding:12px;border-radius:10px;font-weight:700;font-size:13px}
+.review-row .rdot{width:19px;height:19px;border-radius:50%;background:#e7f7ee;color:#18794e;font-size:10.5px;font-weight:900;display:grid;place-items:center;flex-shrink:0}
+.review-row .rtext{font-size:12.5px;color:var(--ink);font-weight:600}
+.review-row .rval{font-size:11.5px;color:var(--muted);margin-left:auto}
+.sv-review .submit-btn{margin-top:14px;background:var(--blue);color:#fff;text-align:center;padding:11px;border-radius:10px;font-weight:700;font-size:12.5px}
+
+/* Trust banner beneath the 3 steps */
+.trust-banner{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:56px;padding:20px 28px;background:#eaf0ff;border-radius:14px;text-align:center;flex-wrap:wrap}
+.trust-banner span{font-size:20px}
+.trust-banner p{color:var(--ink);font-size:14.5px}
+.trust-banner strong{color:var(--blue)}
 
 /* ---- FAQ accordion ---- */
 .faq-list{max-width:760px;margin:0 auto}
@@ -281,6 +300,6 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
   .steps,.feature-grid{grid-template-columns:1fr}
   .nav-links{display:none}
   .form-mock{max-width:420px;margin:0 auto}
-  .step-row,.step-row:nth-child(even) .step-visual{grid-template-columns:1fr;order:0}
-  .step-row{gap:28px}
+  .steps-flow{grid-template-columns:1fr;gap:36px}
+  .step-arrow{display:none}
 }
