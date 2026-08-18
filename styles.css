@@ -243,7 +243,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
    not modeled on any specific job site's actual branding/UI. */
 .sv-detect-panel{padding:18px}
 .sv-panel-head{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;color:var(--ink);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #edf0f5}
-.sv-panel-head .form-mock-icon{font-size:14px}
+.sv-panel-head .sv-panel-logo{width:16px;height:16px}
 .sv-toggle{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;color:var(--blue)}
 .sv-toggle-pill{width:26px;height:15px;border-radius:999px;background:var(--blue);position:relative;flex-shrink:0}
 .sv-toggle-pill span{position:absolute;top:2px;right:2px;width:11px;height:11px;border-radius:50%;background:#fff}
