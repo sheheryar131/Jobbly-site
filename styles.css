@@ -105,7 +105,11 @@ img{max-width:100%;display:block}
 /* ---- Pricing (mirrors the actual extension's card design) ---- */
 /* ---- AI Resume Builder promo ---- */
 .resume-builder-promo{background:var(--paper)}
+.rbp-head-small{margin-bottom:32px}
+.rbp-head-small h2{font-size:26px}
 .rbp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+.rbp-grid-8{grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px}
+.rbp-grid-8 .rbp-preview{height:150px}
 .rbp-card{text-align:center}
 .rbp-card b{display:block;margin-top:14px;font-size:15px}
 .rbp-card span{display:block;color:var(--muted);font-size:12.5px;margin-top:4px;line-height:1.5}
@@ -127,6 +131,7 @@ img{max-width:100%;display:block}
 
 @media(max-width:880px){
   .rbp-grid,.rbp-features{grid-template-columns:1fr}
+  .rbp-grid-8{grid-template-columns:repeat(2,1fr)}
 }
 
 .pricing{background:radial-gradient(120% 140% at 20% 0%,var(--navy-raised) 0%,var(--navy-deep) 60%);color:#fff}
@@ -390,4 +395,156 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 .resume-doc.tpl-compact h2{margin:13px 0 6px;color:var(--r-accent)}
 .resume-doc.tpl-compact .resume-entry{margin-bottom:8px}
 
+
+/* Executive — centered header, double rule, formal and spacious */
+.resume-doc.tpl-executive{padding:40px 38px;text-align:center}
+.resume-doc.tpl-executive h1{font-size:23px;letter-spacing:.04em}
+.resume-doc.tpl-executive .resume-contact{margin-bottom:6px}
+.resume-doc.tpl-executive .resume-header-rule{height:3px;background:var(--r-accent);width:60px;margin:0 auto 20px}
+.resume-doc.tpl-executive h2{text-align:left;border-bottom:2px double #999}
+.resume-doc.tpl-executive .resume-entry-head,.resume-doc.tpl-executive .resume-entry-sub,.resume-doc.tpl-executive .resume-skills{text-align:left}
+
+/* Timeline — connecting line down the left edge of each experience entry */
+.resume-doc.tpl-timeline .resume-entry{position:relative;padding-left:16px;border-left:2px solid var(--r-accent-soft)}
+.resume-doc.tpl-timeline .resume-entry::before{content:"";position:absolute;left:-5px;top:3px;width:8px;height:8px;border-radius:50%;background:var(--r-accent)}
+.resume-doc.tpl-timeline h2{border-bottom:none;color:var(--r-accent)}
+
+/* Boxed — each section sits in its own bordered card */
+.resume-doc.tpl-boxed h2{border:none;background:var(--r-accent-soft);color:var(--r-accent);padding:5px 10px;border-radius:6px;display:inline-block;margin-top:16px}
+.resume-doc.tpl-boxed .resume-entry{border:1px solid #edf0f5;border-radius:8px;padding:10px 12px;margin-bottom:10px}
+
+/* Underline — thick colored rule under the name and each section header */
+.resume-doc.tpl-underline h1{padding-bottom:8px;border-bottom:4px solid var(--r-accent);display:inline-block}
+.resume-doc.tpl-underline h2{border-bottom:2px solid var(--r-accent);color:var(--r-accent)}
+
+/* Split — name and contact info on the same row, opposite ends */
+.resume-doc.tpl-split .resume-doc-header-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.resume-doc.tpl-split .resume-contact{margin-bottom:16px;text-align:right}
+.resume-doc.tpl-split h2{color:var(--r-accent)}
+
+/* Typewriter — monospace accents on dates, technical feel */
+.resume-doc.tpl-typewriter .resume-entry-head span:last-child{font-family:'Courier New',monospace;font-size:11px}
+.resume-doc.tpl-typewriter h2{font-family:'Courier New',monospace;letter-spacing:0}
+
+/* Banner — a thin full-width accent bar above the name */
+.resume-doc.tpl-banner{padding-top:0}
+.resume-doc.tpl-banner .resume-doc-topbar{height:8px;background:var(--r-accent);margin:0 -30px 24px}
+.resume-doc.tpl-banner h2{color:var(--r-accent)}
+
+/* Framed — a border around the whole page */
+.resume-doc.tpl-framed{border:2px solid var(--r-accent);padding:28px 26px}
+.resume-doc.tpl-framed h2{color:var(--r-accent)}
+
+/* Chip Skills — larger, bolder skill pills, more visual weight on skills */
+.resume-doc.tpl-chipskills .resume-skill-pill{background:var(--r-accent);color:#fff;padding:5px 13px;font-size:11.5px;font-weight:700;border-radius:999px}
+.resume-doc.tpl-chipskills h2{color:var(--r-accent)}
+
+/* Numbered — section headers get a numeric marker */
+.resume-doc.tpl-numbered{counter-reset:section}
+.resume-doc.tpl-numbered h2{counter-increment:section;border-bottom:none;color:var(--r-accent)}
+.resume-doc.tpl-numbered h2::before{content:"0" counter(section) " — "}
+
+/* Academic — small caps, formal CV feel */
+.resume-doc.tpl-academic h2{font-variant:small-caps;font-size:14px;letter-spacing:.03em;border-bottom:1px solid #1a1a1a}
+.resume-doc.tpl-academic h1{font-variant:small-caps}
+
+/* Tech — small dark label chips before each section header */
+.resume-doc.tpl-tech h2{border-bottom:none;background:#1a1a1a;color:#fff;display:inline-block;padding:3px 10px;border-radius:4px;font-family:'Courier New',monospace}
+
+/* Two-Tone — name in accent color, section headers in a second neutral tone */
+.resume-doc.tpl-twotone h1{color:var(--r-accent)}
+.resume-doc.tpl-twotone h2{color:#475569;border-bottom-color:#475569}
+
+/* Rounded — soft rounded pills and corners throughout */
+.resume-doc.tpl-rounded{padding:34px}
+.resume-doc.tpl-rounded h2{border:none;background:var(--r-accent-soft);color:var(--r-accent);padding:6px 14px;border-radius:999px;display:inline-block}
+.resume-doc.tpl-rounded .resume-skill-pill{border-radius:999px}
+
+/* Sharp — zero-radius corners, corporate and serious */
+.resume-doc.tpl-sharp .resume-skill-pill{border-radius:0}
+.resume-doc.tpl-sharp h2{border-bottom:3px solid var(--r-accent)}
+
+/* Wide Margins — generous side margins, narrower content column */
+.resume-doc.tpl-widemargins{padding:32px 52px}
+.resume-doc.tpl-widemargins h2{color:var(--r-accent)}
+
+/* Condensed — tighter letter-spacing, fits more without shrinking font */
+.resume-doc.tpl-condensed{letter-spacing:-.01em}
+.resume-doc.tpl-condensed h1{letter-spacing:-.02em}
+.resume-doc.tpl-condensed h2{color:var(--r-accent);letter-spacing:0}
+
+/* Highlight — dates shown as a highlighted swatch rather than plain text */
+.resume-doc.tpl-highlight .resume-entry-head span:last-child{background:var(--r-accent-soft);color:var(--r-accent);padding:2px 8px;border-radius:5px;font-weight:700}
+.resume-doc.tpl-highlight h2{color:var(--r-accent)}
+
+/* Vintage — serif throughout, double rules, old-world professional */
+.resume-doc.tpl-vintage{font-family:Georgia,'Times New Roman',serif}
+.resume-doc.tpl-vintage h1{font-family:Georgia,'Times New Roman',serif}
+.resume-doc.tpl-vintage h2{border-bottom:3px double #1a1a1a;font-family:Georgia,'Times New Roman',serif}
+
+/* Gradient — name rendered with a subtle two-tone gradient */
+.resume-doc.tpl-gradient h1{background:linear-gradient(90deg,var(--r-accent),#1a1a1a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.resume-doc.tpl-gradient h2{color:var(--r-accent)}
+
+/* Justified — fully justified paragraph text, newspaper-column feel */
+.resume-doc.tpl-justified p{text-align:justify}
+.resume-doc.tpl-justified h2{color:var(--r-accent)}
+
+/* Icon Labels — small accent-colored dot markers before section headers */
+.resume-doc.tpl-iconlabels h2{border-bottom:none;padding-left:14px;position:relative}
+.resume-doc.tpl-iconlabels h2::before{content:"●";position:absolute;left:0;color:var(--r-accent);font-size:9px;top:4px}
+
+/* Serif Header — serif name only, sans-serif body (a lighter touch than Vintage) */
+.resume-doc.tpl-serifheader h1{font-family:Georgia,'Times New Roman',serif;font-size:24px}
+.resume-doc.tpl-serifheader h2{color:var(--r-accent)}
+
+/* Divider Dots — a row of small dots between name and contact info */
+.resume-doc.tpl-dividerdots .resume-doc-dots{text-align:center;color:var(--r-accent-soft);letter-spacing:6px;margin:6px 0 14px;font-size:10px}
+.resume-doc.tpl-dividerdots h1{text-align:center}
+.resume-doc.tpl-dividerdots .resume-contact{text-align:center}
+.resume-doc.tpl-dividerdots h2{color:var(--r-accent)}
+
+/* ---- Background / stripe templates ---- */
+/* Purely decorative color elements — never containing actual resume
+   content, so the underlying text stays single-column and linear for ATS
+   parsing regardless of how the page looks visually. */
+
+/* Tinted — a soft full-page background wash, safe since it's just color,
+   not a structural change to how content reads. */
+.resume-doc.tpl-tinted{background:var(--r-bg-tint)}
+.resume-doc.tpl-tinted h2{color:var(--r-accent)}
+
+/* Side Stripe — a solid decorative bar down the left edge */
+.resume-doc.tpl-sidestripe,.resume-doc.tpl-stripetint{padding-left:44px;position:relative}
+.resume-doc.tpl-sidestripe .resume-doc-sidestripe,.resume-doc.tpl-stripetint .resume-doc-sidestripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--r-stripe)}
+.resume-doc.tpl-sidestripe h2,.resume-doc.tpl-stripetint h2{color:var(--r-accent)}
+.resume-doc.tpl-stripetint{background:var(--r-bg-tint)}
+
+/* Top Stripe / Double Stripe — a thick solid bar across the top (and
+   optionally bottom too) */
+.resume-doc.tpl-topstripe,.resume-doc.tpl-doublestripe{padding-top:0}
+.resume-doc.tpl-topstripe .resume-doc-topstripe,.resume-doc.tpl-doublestripe .resume-doc-topstripe{height:16px;background:var(--r-stripe);margin:0 -30px 22px}
+.resume-doc.tpl-topstripe h2,.resume-doc.tpl-doublestripe h2{color:var(--r-accent)}
+.resume-doc.tpl-doublestripe .resume-doc-bottomstripe{height:16px;background:var(--r-stripe);margin:22px -30px 0}
+
+/* Bottom Stripe alone */
+.resume-doc.tpl-bottomstripe .resume-doc-bottomstripe{height:16px;background:var(--r-stripe);margin:22px -30px -32px}
+.resume-doc.tpl-bottomstripe h2{color:var(--r-accent)}
+
+/* Corner Block — a decorative triangular color block in the top-right */
+.resume-doc.tpl-cornerblock{position:relative;overflow:hidden}
+.resume-doc.tpl-cornerblock .resume-doc-corner{position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 90px 90px 0;border-color:transparent var(--r-stripe) transparent transparent;opacity:.85}
+.resume-doc.tpl-cornerblock h2{color:var(--r-accent)}
+
+/* Header Block — a solid color block wrapping just the name/contact area,
+   bigger and bolder than Modern's thinner header band */
+.resume-doc.tpl-headerblock{padding-top:0}
+.resume-doc.tpl-headerblock .resume-doc-headerblock{background:var(--r-stripe);color:#fff;padding:32px 30px 24px;margin:0 -30px 20px}
+.resume-doc.tpl-headerblock .resume-doc-headerblock h1{color:#fff}
+.resume-doc.tpl-headerblock .resume-doc-headerblock .resume-contact{color:rgba(255,255,255,.85)}
+.resume-doc.tpl-headerblock h2{color:var(--r-accent)}
+
+/* Framed Tint — the existing Framed border combined with a soft background */
+.resume-doc.tpl-framedtint{border:2px solid var(--r-accent);padding:28px 26px;background:var(--r-bg-tint)}
+.resume-doc.tpl-framedtint h2{color:var(--r-accent)}
 
