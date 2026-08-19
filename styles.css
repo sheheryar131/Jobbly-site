@@ -107,21 +107,25 @@ img{max-width:100%;display:block}
 .resume-builder-promo{background:var(--paper)}
 .rbp-head-small{margin-bottom:32px}
 .rbp-head-small h2{font-size:26px}
-.rbp-card{text-align:center;flex:0 0 auto;width:230px}
+.rbp-card{text-align:center;flex:0 0 auto;width:300px}
 /* Continuous, gentle auto-scrolling carousel of template previews — an
    overflow-hidden viewport with a soft edge fade, and an inner flex row
    (the real cards + one duplicate copy, laid end to end) that animates
    left forever. Translating exactly -50% of the inner row's own width
    always lands back on frame 0, since the duplicate is byte-for-byte
-   identical, so the loop is seamless with no jump or reset. */
+   identical, so the loop is seamless with no jump or reset.
+   Full-bleed (breaks out of .wrap) so the larger, higher-quality cards
+   have real room instead of being cropped by the text column width. */
 .rbp-marquee{
   overflow:hidden;position:relative;margin-bottom:40px;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);
-  mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);
+  width:100vw;left:50%;margin-left:-50vw;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);
 }
-.rbp-marquee-inner{display:flex;width:max-content;animation:rbp-scroll 62s linear infinite}
+.rbp-marquee-inner{display:flex;width:max-content;animation:rbp-scroll 70s linear infinite}
 .rbp-marquee:hover .rbp-marquee-inner{animation-play-state:paused}
-.rbp-track{display:flex;gap:22px;padding:6px 11px}
+.rbp-track{display:flex;gap:28px;padding:8px calc(50vw - 550px) 8px 28px}
+@media(max-width:1120px){.rbp-track{padding:8px 28px}}
 @keyframes rbp-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){
   .rbp-marquee-inner{animation:none}
@@ -131,17 +135,18 @@ img{max-width:100%;display:block}
    pixel height — that's what was making these read as squat "letter" crops
    with content sheared off instead of an actual page shape. */
 .rbp-preview{
-  background:#fff;border:1px solid #e4e8f0;border-radius:8px;
+  background:#fff;border:1px solid #e4e8f0;border-radius:10px;
   aspect-ratio:210/297;overflow:hidden;position:relative;
-  box-shadow:0 16px 40px rgba(28,42,74,.1);
+  box-shadow:0 22px 48px rgba(28,42,74,.13);
 }
 /* The exact same resume-doc markup and CSS used in the real product, scaled
-   down at a fixed ratio to exactly fill a 230px-wide A4 card. */
-.rbp-doc{width:480px;height:678.9px;transform:scale(.4792);transform-origin:top left;position:absolute;top:0;left:0}
+   down at a fixed ratio to exactly fill a 300px-wide A4 card — large enough
+   that the body copy stays comfortably readable, not a thumbnail. */
+.rbp-doc{width:480px;height:678.9px;transform:scale(.625);transform-origin:top left;position:absolute;top:0;left:0}
 @media(max-width:600px){
-  .rbp-card{width:168px}
-  .rbp-doc{transform:scale(.35)}
-  .rbp-track{gap:16px;padding:6px 8px}
+  .rbp-card{width:225px}
+  .rbp-doc{transform:scale(.46875)}
+  .rbp-track{gap:18px;padding:8px 18px}
 }
 
 .rbp-features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:44px}
