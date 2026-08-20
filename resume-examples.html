@@ -29,13 +29,25 @@
 }
 
 /* Resume cards are display-only: no click action and no hover movement. */
-.re-hub-card,
-.re-hub-card:hover,
+.re-hub-card {
+  cursor: default !important;
+  transform: none !important;
+  box-shadow: none !important;
+  transition: box-shadow 0.45s ease;
+}
+
+.re-hub-card:hover {
+  cursor: default !important;
+  transform: none !important;
+  box-shadow:
+    0 10px 30px rgba(49, 87, 213, 0.10),
+    0 0 22px rgba(49, 87, 213, 0.07) !important;
+}
+
 .re-hub-card:focus,
 .re-hub-card:active {
   cursor: default !important;
   transform: none !important;
-  box-shadow: none !important;
 }
 </style>
 </head>
