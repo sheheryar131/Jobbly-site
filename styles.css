@@ -669,14 +669,87 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 @media(max-width:880px){.re-mini-grid{grid-template-columns:1fr}}
 
 /* ---- Resume examples hub page (/resume-examples.html) ---- */
-.re-hub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.re-hub-card{display:block;text-decoration:none;background:#fff;border:1px solid #e4e8f0;border-radius:14px;overflow:hidden;box-shadow:0 16px 36px rgba(28,42,74,.08);transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease;min-width:0}
-.re-hub-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(28,42,74,.16)}
+/* 3-per-row, deliberately larger than a typical thumbnail grid so the
+   resume is actually readable at rest, not just as a vague preview — and
+   on hover it pops up further still (see below), since the point of this
+   page is letting someone genuinely evaluate a design, not just browse
+   thumbnails. */
+.re-hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 34px;position:relative}
+.re-hub-card{display:block;text-decoration:none;background:#fff;border:1px solid #e4e8f0;border-radius:14px;overflow:hidden;box-shadow:0 16px 36px rgba(28,42,74,.08);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease;min-width:0;position:relative}
+/* Hover "pop" — scales up in place well beyond the resting size so someone
+   can actually read the layout without clicking through, elevated above
+   its neighbors so the enlargement isn't clipped by the grid around it.
+   Hover-capable pointers only, so it doesn't fight touch/scroll on mobile. */
+@media(hover:hover){
+  .re-hub-card:hover{transform:scale(1.55);z-index:30;box-shadow:0 46px 90px rgba(28,42,74,.35)}
+}
 .re-hub-preview{aspect-ratio:210/297;overflow:hidden;position:relative;background:#fff;border-bottom:1px solid #eef0f5}
 .re-hub-doc{width:480px;height:678.9px;transform:scale(.354);transform-origin:top left;position:absolute;top:0;left:0}
 .re-hub-card-label{padding:14px 16px}
 .re-hub-role{font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.04em;display:block}
 .re-hub-name{font-size:14.5px;font-weight:700;color:var(--ink)}
 @media(max-width:880px){.re-hub-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.re-hub-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.re-hub-grid{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto}}
 
+/* ==========================================================================
+   Photo-sidebar family (sidephoto / sidephotobold / sidephotoband) — the
+   one genuinely two-column layout family, opted into deliberately despite
+   the ATS-parsing research on file for every layout above (see the comment
+   above RESUME_TEMPLATES in dashboard.js), mixed in with no distinguishing
+   label per product decision. All three share this base; only the header
+   placement differs (see renderSidebarResumeDoc in dashboard.js). ========================================================================== */
+.resume-doc.tpl-sidephoto,.resume-doc.tpl-sidephotobold{
+  padding:0;display:flex;align-items:stretch;min-height:678px;
+}
+.resume-doc.tpl-sidephoto .resume-doc-sidebar,.resume-doc.tpl-sidephotobold .resume-doc-sidebar{
+  width:172px;flex:0 0 172px;background:var(--r-stripe);color:#fff;padding:30px 20px;
+}
+.resume-doc.tpl-sidephoto .resume-doc-main,.resume-doc.tpl-sidephotobold .resume-doc-main{
+  flex:1;padding:30px 28px;min-width:0;
+}
+.resume-doc-photo{
+  width:92px;height:92px;border-radius:50%;overflow:hidden;margin:0 auto 18px;
+  border:3px solid rgba(255,255,255,.55);background:rgba(255,255,255,.15);
+  display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;color:#fff;
+}
+.resume-doc-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.resume-doc-sidebar h3{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;margin:18px 0 8px;color:rgba(255,255,255,.85);border:none}
+.resume-doc-sidebar p{font-size:11px;color:rgba(255,255,255,.85);line-height:1.6}
+.resume-doc-sidebar .resume-contact{color:rgba(255,255,255,.92);font-size:11px;margin:0 0 5px;display:block}
+.resume-doc-sidebar-list{list-style:none;padding:0;margin:0}
+.resume-doc-sidebar-list li{font-size:11px;color:rgba(255,255,255,.9);margin-bottom:5px}
+.resume-doc.tpl-sidephotobold .resume-doc-sidebar h1{color:#fff;font-size:19px;text-align:center;margin-top:4px}
+.resume-doc.tpl-sidephotobold .resume-doc-sidebar .resume-doc-title{color:rgba(255,255,255,.8);text-align:center;font-size:11.5px;margin-bottom:6px}
+.resume-doc.tpl-sidephoto .resume-doc-headerband{background:var(--r-accent-soft);margin:-30px -28px 20px;padding:28px}
+.resume-doc.tpl-sidephoto .resume-doc-headerband h1{color:#1a1a1a}
+.resume-doc.tpl-sidephoto .resume-doc-title{color:#555;font-size:12.5px;margin-top:2px}
+.resume-doc.tpl-sidephoto .resume-doc-main h2,.resume-doc.tpl-sidephotobold .resume-doc-main h2{
+  border-bottom:none;padding-left:15px;position:relative;color:var(--r-stripe);
+}
+.resume-doc.tpl-sidephoto .resume-doc-main h2::before,.resume-doc.tpl-sidephotobold .resume-doc-main h2::before{
+  content:"›";position:absolute;left:0;top:-1px;font-weight:900;font-size:14px;
+}
+
+/* sidephotoband — photo/name in a full-width band up top instead of a
+   full-height side panel, contact/skills/experience split into two columns
+   below the band. */
+.resume-doc.tpl-sidephotoband{padding:0}
+.resume-doc.tpl-sidephotoband .resume-doc-band{
+  background:var(--r-stripe);color:#fff;text-align:center;padding:26px 30px 22px;
+}
+.resume-doc.tpl-sidephotoband .resume-doc-band h1{color:#fff}
+.resume-doc.tpl-sidephotoband .resume-doc-title{color:rgba(255,255,255,.85);font-size:12.5px;margin-top:2px}
+.resume-doc.tpl-sidephotoband .resume-doc-photo{margin:0 auto 14px}
+.resume-doc.tpl-sidephotoband .resume-doc-cols{display:flex;padding:26px 28px}
+.resume-doc.tpl-sidephotoband .resume-doc-col-narrow{width:150px;flex:0 0 150px;padding-right:20px;border-right:1px solid #eee}
+.resume-doc.tpl-sidephotoband .resume-doc-col-narrow h3{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--r-stripe);border:none;margin:14px 0 8px}
+.resume-doc.tpl-sidephotoband .resume-doc-col-narrow h3:first-child{margin-top:0}
+.resume-doc.tpl-sidephotoband .resume-doc-col-narrow .resume-contact{display:block;font-size:11px;color:#555;margin-bottom:4px}
+.resume-doc.tpl-sidephotoband .resume-doc-sidebar-list{list-style:none;padding:0;margin:0}
+.resume-doc.tpl-sidephotoband .resume-doc-sidebar-list li{font-size:11px;color:#555;margin-bottom:4px}
+.resume-doc.tpl-sidephotoband .resume-doc-col-wide{flex:1;padding-left:22px;min-width:0}
+.resume-doc.tpl-sidephotoband .resume-doc-col-wide h2{color:var(--r-stripe)}
+
+@media print{
+  .resume-doc.tpl-sidephoto,.resume-doc.tpl-sidephotobold{min-height:0}
+}
