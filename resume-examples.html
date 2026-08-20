@@ -27,6 +27,21 @@
     max-width: 1440px;
   }
 }
+
+/* Resume cards are display-only. Keep hover subtle and polished. */
+.re-hub-card {
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .re-hub-card:hover {
+    transform: translateY(-3px) scale(1.018) !important;
+    z-index: 2 !important;
+    box-shadow:
+      0 18px 42px rgba(28,42,74,.14),
+      0 0 24px rgba(49,87,213,.10) !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -53,7 +68,7 @@
       <p>Every example below was built with Jobbly's AI Resume Builder — pick the closest match to your field, or build your own from your actual profile in about a minute.</p>
     </div>
     <div class="re-hub-grid">
-      <a class="re-hub-card" href="/resume-examples/principal.html">
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-academic re-hub-doc" style="--r-accent:#3157d5;--r-accent-soft:#eaf0ff;--r-heading-font:Arial,sans-serif;--r-stripe:#3157d5">
 <h1>Dr. Helen Marsh</h1>
@@ -82,8 +97,8 @@
           <span class="re-hub-role">Principal</span>
           <span class="re-hub-name">Dr. Helen Marsh</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/senior-physiotherapist.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-bottomstripe re-hub-doc" style="--r-accent:#0d9488;--r-accent-soft:#e6f7f5;--r-heading-font:Arial,sans-serif;--r-stripe:#0d9488">
 <h1>James Whitford</h1>
@@ -113,8 +128,8 @@
           <span class="re-hub-role">Senior Physiotherapist</span>
           <span class="re-hub-name">James Whitford</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/data-analyst.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-chipskills re-hub-doc" style="--r-accent:#1a1a1a;--r-accent-soft:#f0f0f0;--r-heading-font:Georgia,'Times New Roman',serif;--r-stripe:#1a1a1a">
 <h1>Priya Nair</h1>
@@ -143,8 +158,8 @@
           <span class="re-hub-role">Data Analyst</span>
           <span class="re-hub-name">Priya Nair</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/store-manager.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-compact re-hub-doc" style="--r-accent:#9f1239;--r-accent-soft:#fce8ed;--r-heading-font:Georgia,'Times New Roman',serif;--r-stripe:#9f1239">
 <h1>Chloe Bennett</h1>
@@ -173,8 +188,8 @@
           <span class="re-hub-role">Store Manager</span>
           <span class="re-hub-name">Chloe Bennett</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/financial-analyst.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-condensed re-hub-doc" style="--r-accent:#166534;--r-accent-soft:#e8f5ea;--r-heading-font:Arial,sans-serif;--r-stripe:#166534">
 <h1>Ryan Ferguson</h1>
@@ -203,8 +218,8 @@
           <span class="re-hub-role">Financial Analyst</span>
           <span class="re-hub-name">Ryan Ferguson</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/social-media-manager.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-cornerblock re-hub-doc" style="--r-accent:#475569;--r-accent-soft:#eef1f5;--r-heading-font:'Trebuchet MS',sans-serif;--r-stripe:#475569">
 <div class="resume-doc-corner"></div>
@@ -234,8 +249,8 @@
           <span class="re-hub-role">Social Media Manager</span>
           <span class="re-hub-name">Isabella Rossi</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/lead-instructor.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-dividerdots re-hub-doc" style="--r-accent:#c2410c;--r-accent-soft:#fdece1;--r-heading-font:Arial,sans-serif;--r-stripe:#c2410c">
 <h1>Amelia Ward</h1>
@@ -265,8 +280,8 @@
           <span class="re-hub-role">Lead Instructor</span>
           <span class="re-hub-name">Amelia Ward</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/operations-manager.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-doublestripe re-hub-doc" style="--r-accent:#7e22ce;--r-accent-soft:#f3e8ff;--r-heading-font:Arial,sans-serif;--r-stripe:#7e22ce">
 <div class="resume-doc-topstripe"></div>
@@ -297,8 +312,8 @@
           <span class="re-hub-role">Operations Manager</span>
           <span class="re-hub-name">Nathan Cole</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/general-manager.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-executive re-hub-doc" style="--r-accent:#1e3a5f;--r-accent-soft:#e9eef5;--r-heading-font:Georgia,'Times New Roman',serif;--r-stripe:#1e3a5f">
 <h1>Margaret Holt</h1>
@@ -328,8 +343,8 @@
           <span class="re-hub-role">General Manager</span>
           <span class="re-hub-name">Margaret Holt</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/architect.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-framed re-hub-doc" style="--r-accent:#be185d;--r-accent-soft:#fce7f3;--r-heading-font:Arial,sans-serif;--r-stripe:#be185d">
 <h1>Oliver Grant</h1>
@@ -358,8 +373,8 @@
           <span class="re-hub-role">Architect</span>
           <span class="re-hub-name">Oliver Grant</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/interior-designer.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-framedtint re-hub-doc" style="--r-accent:#3157d5;--r-accent-soft:#eaf0ff;--r-heading-font:Arial,sans-serif;--r-stripe:#3157d5">
 <h1>Zara Ahmed</h1>
@@ -388,8 +403,8 @@
           <span class="re-hub-role">Interior Designer</span>
           <span class="re-hub-name">Zara Ahmed</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/content-creator.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-gradient re-hub-doc" style="--r-accent:#0d9488;--r-accent-soft:#e6f7f5;--r-heading-font:Arial,sans-serif;--r-stripe:#0d9488">
 <h1>Tyler Brooks</h1>
@@ -418,8 +433,8 @@
           <span class="re-hub-role">Content Creator</span>
           <span class="re-hub-name">Tyler Brooks</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/senior-recruitment-consultant.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-highlight re-hub-doc" style="--r-accent:#1a1a1a;--r-accent-soft:#f0f0f0;--r-heading-font:Georgia,'Times New Roman',serif;--r-stripe:#1a1a1a">
 <h1>Sarah Mitchell</h1>
@@ -448,8 +463,8 @@
           <span class="re-hub-role">Senior Recruitment Consultant</span>
           <span class="re-hub-name">Sarah Mitchell</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/senior-veterinary-nurse.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-iconlabels re-hub-doc" style="--r-accent:#9f1239;--r-accent-soft:#fce8ed;--r-heading-font:Georgia,'Times New Roman',serif;--r-stripe:#9f1239">
 <h1>Dr. Rebecca Lyons</h1>
@@ -478,8 +493,8 @@
           <span class="re-hub-role">Senior Veterinary Nurse</span>
           <span class="re-hub-name">Dr. Rebecca Lyons</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/journalist.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-justified re-hub-doc" style="--r-accent:#166534;--r-accent-soft:#e8f5ea;--r-heading-font:Arial,sans-serif;--r-stripe:#166534">
 <h1>Michael Chen</h1>
@@ -508,8 +523,8 @@
           <span class="re-hub-role">Journalist</span>
           <span class="re-hub-name">Michael Chen</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/qa-engineer.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-numbered re-hub-doc" style="--r-accent:#475569;--r-accent-soft:#eef1f5;--r-heading-font:'Trebuchet MS',sans-serif;--r-stripe:#475569">
 <h1>David Okafor</h1>
@@ -538,8 +553,8 @@
           <span class="re-hub-role">QA Engineer</span>
           <span class="re-hub-name">David Okafor</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/lead-educator.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-rounded re-hub-doc" style="--r-accent:#c2410c;--r-accent-soft:#fdece1;--r-heading-font:Arial,sans-serif;--r-stripe:#c2410c">
 <h1>Chloe Turner</h1>
@@ -568,8 +583,8 @@
           <span class="re-hub-role">Lead Educator</span>
           <span class="re-hub-name">Chloe Turner</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/legal-assistant.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-serifheader re-hub-doc" style="--r-accent:#7e22ce;--r-accent-soft:#f3e8ff;--r-heading-font:Arial,sans-serif;--r-stripe:#7e22ce">
 <h1>Jonathan Price</h1>
@@ -598,8 +613,8 @@
           <span class="re-hub-role">Legal Assistant</span>
           <span class="re-hub-name">Jonathan Price</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/mechanical-engineer.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-sharp re-hub-doc" style="--r-accent:#1e3a5f;--r-accent-soft:#e9eef5;--r-heading-font:Georgia,'Times New Roman',serif;--r-stripe:#1e3a5f">
 <h1>Adam Kovac</h1>
@@ -628,8 +643,8 @@
           <span class="re-hub-role">Mechanical Engineer</span>
           <span class="re-hub-name">Adam Kovac</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/air-traffic-controller.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-split re-hub-doc" style="--r-accent:#be185d;--r-accent-soft:#fce7f3;--r-heading-font:Arial,sans-serif;--r-stripe:#be185d">
 <div class="resume-doc-header-row"><h1>Captain Laura Simmons</h1></div>
@@ -658,8 +673,8 @@
           <span class="re-hub-role">Air Traffic Controller</span>
           <span class="re-hub-name">Captain Laura Simmons</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/sales-agent.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-stripetint re-hub-doc" style="--r-accent:#3157d5;--r-accent-soft:#eaf0ff;--r-heading-font:Arial,sans-serif;--r-stripe:#3157d5;--r-bg-tint:#eaf0ff">
 <div class="resume-doc-sidestripe"></div>
@@ -689,8 +704,8 @@
           <span class="re-hub-role">Sales Agent</span>
           <span class="re-hub-name">Hannah Foster</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/devops-engineer.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-tech re-hub-doc" style="--r-accent:#0d9488;--r-accent-soft:#e6f7f5;--r-heading-font:Arial,sans-serif;--r-stripe:#0d9488">
 <h1>Kevin Zhang</h1>
@@ -719,8 +734,8 @@
           <span class="re-hub-role">DevOps Engineer</span>
           <span class="re-hub-name">Kevin Zhang</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/head-baker.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-topstripe re-hub-doc" style="--r-accent:#1a1a1a;--r-accent-soft:#f0f0f0;--r-heading-font:Georgia,'Times New Roman',serif;--r-stripe:#1a1a1a">
 <div class="resume-doc-topstripe"></div>
@@ -750,8 +765,8 @@
           <span class="re-hub-role">Head Baker</span>
           <span class="re-hub-name">Georgia Reid</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/insurance-broker.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-twotone re-hub-doc" style="--r-accent:#9f1239;--r-accent-soft:#fce8ed;--r-heading-font:Georgia,'Times New Roman',serif;--r-stripe:#9f1239">
 <h1>Patrick O'Brien</h1>
@@ -780,8 +795,8 @@
           <span class="re-hub-role">Insurance Broker</span>
           <span class="re-hub-name">Patrick O'Brien</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/senior-copywriter.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-typewriter re-hub-doc" style="--r-accent:#166534;--r-accent-soft:#e8f5ea;--r-heading-font:Arial,sans-serif;--r-stripe:#166534">
 <h1>Emily Carter</h1>
@@ -810,8 +825,8 @@
           <span class="re-hub-role">Senior Copywriter</span>
           <span class="re-hub-name">Emily Carter</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/senior-librarian.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-vintage re-hub-doc" style="--r-accent:#475569;--r-accent-soft:#eef1f5;--r-heading-font:'Trebuchet MS',sans-serif;--r-stripe:#475569">
 <h1>Margaret Ellis</h1>
@@ -840,8 +855,8 @@
           <span class="re-hub-role">Senior Librarian</span>
           <span class="re-hub-name">Margaret Ellis</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/environmental-scientist.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-widemargins re-hub-doc" style="--r-accent:#c2410c;--r-accent-soft:#fdece1;--r-heading-font:Arial,sans-serif;--r-stripe:#c2410c">
 <h1>Dr. Samuel Peters</h1>
@@ -870,8 +885,8 @@
           <span class="re-hub-role">Environmental Scientist</span>
           <span class="re-hub-name">Dr. Samuel Peters</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/student.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-sidephoto re-hub-doc" style="--r-accent:#f4dcd0;--r-stripe:#5f9ea0">
 <div class="resume-doc-sidebar">
@@ -901,8 +916,8 @@
           <span class="re-hub-role">Student</span>
           <span class="re-hub-name">Olivia Wilson</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/civil-engineer.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-sidephotobold re-hub-doc" style="--r-stripe:#1e3a5f">
 <div class="resume-doc-sidebar">
@@ -932,8 +947,8 @@
           <span class="re-hub-role">Civil Engineer</span>
           <span class="re-hub-name">Raj Kapoor</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/pharmacist.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-sidephotoband re-hub-doc" style="--r-stripe:#c2410c">
 <div class="resume-doc-band">
@@ -961,8 +976,8 @@
           <span class="re-hub-role">Pharmacist</span>
           <span class="re-hub-name">Layla Mansour</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/registered-nurse.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-modern re-hub-doc" style="--r-accent:#0d9488;--r-accent-soft:#e6f7f5">
 <div class="resume-header"><h1>Priya Sharma</h1><div class="resume-contact">priya.sharma@email.com · Melbourne, VIC</div></div>
@@ -995,8 +1010,8 @@
           <span class="re-hub-role">Registered Nurse</span>
           <span class="re-hub-name">Priya Sharma</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/software-engineer.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-elegant re-hub-doc" style="--r-accent:#9f1239;--r-heading-font:Georgia,'Times New Roman',serif">
 <h1>Marcus Chen</h1>
@@ -1030,8 +1045,8 @@
           <span class="re-hub-role">Software Engineer</span>
           <span class="re-hub-name">Marcus Chen</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/graphic-designer.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-headerblock re-hub-doc" style="--r-stripe:#7e22ce;--r-accent:#7e22ce">
 <div class="resume-doc-headerblock"><h1>Emma Wilson</h1><div class="resume-contact">emma.wilson@email.com · Perth, WA</div></div>
@@ -1064,8 +1079,8 @@
           <span class="re-hub-role">Graphic Designer</span>
           <span class="re-hub-name">Emma Wilson</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/warehouse-supervisor.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-bold re-hub-doc" style="--r-accent:#166534;--r-accent-soft:#e8f5ea">
 <h1>Daniel Kim</h1>
@@ -1099,8 +1114,8 @@
           <span class="re-hub-role">Warehouse Supervisor</span>
           <span class="re-hub-name">Daniel Kim</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/support-coordinator.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-sidestripe re-hub-doc" style="--r-stripe:#c2410c;--r-accent:#c2410c">
 <div class="resume-doc-sidestripe"></div>
@@ -1135,8 +1150,8 @@
           <span class="re-hub-role">Support Coordinator</span>
           <span class="re-hub-name">Sofia Rossi</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/senior-accountant.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-classic re-hub-doc" style="--r-accent:#1e3a5f;--r-heading-font:Georgia,'Times New Roman',serif">
 <h1>Jordan Blake</h1>
@@ -1170,8 +1185,8 @@
           <span class="re-hub-role">Senior Accountant</span>
           <span class="re-hub-name">Jordan Blake</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/project-manager.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-tinted re-hub-doc" style="--r-bg-tint:#fdf6ee;--r-accent:#c2410c">
 <h1>Liam Patel</h1>
@@ -1205,8 +1220,8 @@
           <span class="re-hub-role">Project Manager</span>
           <span class="re-hub-name">Liam Patel</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/marketing-manager.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-minimal re-hub-doc" style="--r-accent:#475569">
 <h1>Aisha Okafor</h1>
@@ -1240,8 +1255,8 @@
           <span class="re-hub-role">Marketing Manager</span>
           <span class="re-hub-name">Aisha Okafor</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/electrician.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-timeline re-hub-doc" style="--r-accent:#0f766e;--r-accent-soft:#e3f4f2">
 <h1>Noah Fitzgerald</h1>
@@ -1275,8 +1290,8 @@
           <span class="re-hub-role">Electrician</span>
           <span class="re-hub-name">Noah Fitzgerald</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/hr-advisor.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-boxed re-hub-doc" style="--r-accent:#7c3aed;--r-accent-soft:#f1eafe">
 <h1>Grace Thompson</h1>
@@ -1310,8 +1325,8 @@
           <span class="re-hub-role">HR Advisor</span>
           <span class="re-hub-name">Grace Thompson</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/head-chef.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-underline re-hub-doc" style="--r-accent:#b91c1c">
 <h1>Ethan Walsh</h1>
@@ -1345,8 +1360,8 @@
           <span class="re-hub-role">Head Chef</span>
           <span class="re-hub-name">Ethan Walsh</span>
         </div>
-      </a>
-      <a class="re-hub-card" href="/resume-examples/ux-researcher.html">
+      </div>
+      <div class="re-hub-card">
         <div class="re-hub-preview">
           <div class="resume-doc tpl-banner re-hub-doc" style="--r-accent:#4338ca">
 <div class="resume-doc-topbar"></div>
@@ -1381,7 +1396,7 @@
           <span class="re-hub-role">UX Researcher</span>
           <span class="re-hub-name">Mia Nguyen</span>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
