@@ -656,3 +656,27 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
   .rbp-preview{transition:box-shadow .3s ease}
 }
 
+/* ---- Resume example pages (/resume-examples/*.html) ---- */
+.re-doc-wrap{max-width:600px;margin:0 auto 40px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 24px 54px rgba(28,42,74,.14);border:1px solid #e4e8f0}
+.re-cta{text-align:center;margin-top:8px}
+.re-cta .hero-note{color:var(--muted);margin-top:12px}
+.re-more{background:var(--paper)}
+.re-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.re-mini-card{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid #e4e8f0;border-radius:12px;padding:18px 20px;text-decoration:none;transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s ease,border-color .25s ease}
+.re-mini-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(28,42,74,.1);border-color:#c7d4f7}
+.re-mini-role{font-size:11.5px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.04em}
+.re-mini-name{font-size:15px;font-weight:700;color:var(--ink)}
+@media(max-width:880px){.re-mini-grid{grid-template-columns:1fr}}
+
+/* ---- Resume examples hub page (/resume-examples.html) ---- */
+.re-hub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.re-hub-card{display:block;text-decoration:none;background:#fff;border:1px solid #e4e8f0;border-radius:14px;overflow:hidden;box-shadow:0 16px 36px rgba(28,42,74,.08);transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease;min-width:0}
+.re-hub-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(28,42,74,.16)}
+.re-hub-preview{aspect-ratio:210/297;overflow:hidden;position:relative;background:#fff;border-bottom:1px solid #eef0f5}
+.re-hub-doc{width:480px;height:678.9px;transform:scale(.354);transform-origin:top left;position:absolute;top:0;left:0}
+.re-hub-card-label{padding:14px 16px}
+.re-hub-role{font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.04em;display:block}
+.re-hub-name{font-size:14.5px;font-weight:700;color:var(--ink)}
+@media(max-width:880px){.re-hub-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.re-hub-grid{grid-template-columns:1fr}}
+
