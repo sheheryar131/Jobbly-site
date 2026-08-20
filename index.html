@@ -3,10 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jobbly — Job applications, answered</title>
+<title>Jobbly — AI Autofill for Job Applications (Indeed, SEEK, Jora)</title>
 <meta name="description" content="Jobbly is a Chrome extension that fills out job applications for you and uses AI to answer screening questions — so you can apply to more roles in less time.">
+<link rel="canonical" href="https://jobbly.au/">
+
+<!-- Open Graph / social share previews -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jobbly.au/">
+<meta property="og:site_name" content="Jobbly">
+<meta property="og:title" content="Jobbly — AI Autofill for Job Applications">
+<meta property="og:description" content="Fills out job application forms for you and uses AI to answer screening questions — so you apply to more roles in less time. Free to start.">
+<meta property="og:image" content="https://jobbly.au/assets/logo.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jobbly — AI Autofill for Job Applications">
+<meta name="twitter:description" content="Fills out job application forms for you and uses AI to answer screening questions — so you apply to more roles in less time.">
+<meta name="twitter:image" content="https://jobbly.au/assets/logo.png">
+
 <link rel="icon" href="assets/logo.png">
 <link rel="stylesheet" href="styles.css">
+
+<!-- Structured data: only real, verifiable facts about the product — no
+     fabricated review counts or star ratings, since none exist yet. Once
+     there are genuine reviews, an aggregateRating block can be added. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Jobbly",
+  "applicationCategory": "BrowserApplication",
+  "operatingSystem": "Chrome",
+  "url": "https://jobbly.au/",
+  "description": "Jobbly is a Chrome extension that fills out job application forms and uses AI to answer screening questions on Indeed, SEEK, and Jora.",
+  "offers": [
+    { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "AUD" },
+    { "@type": "Offer", "name": "Beginner", "price": "5", "priceCurrency": "AUD" },
+    { "@type": "Offer", "name": "Pro", "price": "10", "priceCurrency": "AUD" }
+  ]
+}
+</script>
 <script>
 // Supabase's auth redirects sometimes land on the Site URL (this homepage)
 // rather than the specific page requested, even when that page is correctly
