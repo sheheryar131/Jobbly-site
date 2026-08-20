@@ -576,3 +576,83 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 .resume-doc.tpl-framedtint{border:2px solid var(--r-accent);padding:28px 26px;background:var(--r-bg-tint)}
 .resume-doc.tpl-framedtint h2{color:var(--r-accent)}
 
+/* ==========================================================================
+   Design polish pass — targeted fixes for the flat/unresponsive spots
+   (pricing buttons had literally no hover state; the final CTA band, contact
+   form, footer, and marquee cards read static next to the rest of the page)
+   plus one repeated signature motion — a soft diagonal light sweep — applied
+   consistently to the handful of solid-blue primary actions, rather than a
+   different novelty effect scattered on every element. ========================================================================== */
+
+/* ---- Signature: light-sweep on solid-blue primary CTAs only (hero/nav
+   "Add to Chrome", featured plan's "Choose Pro") — one motion, reused, not
+   a different gimmick per button. A ::after diagonal band translates across
+   on hover; clipped by the button's own border-radius via overflow:hidden. */
+.btn-primary,.nav-cta,.plan.featured .plan-btn{position:relative;overflow:hidden}
+.btn-primary::after,.nav-cta::after,.plan.featured .plan-btn::after{
+  content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(115deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-18deg);transition:left .55s cubic-bezier(.16,1,.3,1);pointer-events:none;
+}
+.btn-primary:hover::after,.nav-cta:hover::after,.plan.featured .plan-btn:hover::after{left:120%}
+@media(prefers-reduced-motion:reduce){
+  .btn-primary::after,.nav-cta::after,.plan.featured .plan-btn::after{display:none}
+}
+
+/* ---- Pricing buttons had zero hover feedback — real usability gap on the
+   page's most important click targets, not just a decoration. ---- */
+.plan-btn{transition:background .2s ease,color .2s ease,transform .15s ease,box-shadow .25s ease}
+.plan-btn:hover{background:#dbe5ff;transform:translateY(-2px)}
+.plan-btn:active{transform:translateY(0) scale(.98)}
+.plan.featured .plan-btn:hover{background:#2449bd;box-shadow:0 10px 26px rgba(36,73,189,.45)}
+
+/* ---- Final CTA band: was flat solid blue with zero motion, a jarring
+   drop after the animated hero. Same ambient-glow language as the hero,
+   quieter and slower, so the page's energy doesn't just cut off. ---- */
+.cta-band{position:relative;overflow:hidden}
+.cta-band::before{
+  content:"";position:absolute;inset:-40%;pointer-events:none;
+  background:radial-gradient(480px circle at 20% 30%,rgba(255,255,255,.16),transparent 60%),
+             radial-gradient(420px circle at 80% 70%,rgba(255,255,255,.12),transparent 60%);
+  animation:ctaDrift 16s ease-in-out infinite;
+}
+@keyframes ctaDrift{0%,100%{transform:translate(0,0)}50%{transform:translate(-3%,3%)}}
+.cta-band .wrap{position:relative;z-index:1}
+.cta-band .btn-primary{transition:background .2s ease,transform .15s ease,box-shadow .25s ease}
+.cta-band .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.18)}
+@media(prefers-reduced-motion:reduce){.cta-band::before{animation:none}}
+
+/* ---- Contact form: card now lifts slightly on hover (matches the same
+   affordance language as feature-card/step-visual elsewhere on the page),
+   and inputs get a visible hover state before focus, not just after. ---- */
+.contact-form{transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease}
+.contact-form:hover{transform:translateY(-3px);box-shadow:0 20px 46px rgba(28,42,74,.1)}
+.contact-form input:hover,.contact-form textarea:hover{border-color:#b7c0d8}
+.contact-submit{transition:background .2s ease,transform .15s ease,box-shadow .25s ease}
+.contact-submit:hover{transform:translateY(-2px)}
+.contact-submit:active{transform:translateY(0) scale(.98)}
+
+/* ---- FAQ rows: a touch more tactile feedback on the toggle icon itself,
+   on top of the existing background/indent shift. ---- */
+.faq-q .plus{transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.faq-q:hover .plus{transform:rotate(90deg) scale(1.15)}
+.faq-item.open .faq-q:hover .plus{transform:scale(1.15)}
+
+/* ---- Footer links: same underline-sweep language already used in the
+   nav, for consistency rather than a plain color-only hover. ---- */
+.footer-links a{position:relative;padding-bottom:3px}
+.footer-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--muted-light);transition:width .25s ease}
+.footer-links a:hover::after{width:100%}
+.footer-brand{transition:opacity .2s ease}
+.footer-brand:hover{opacity:.8}
+
+/* ---- Resume marquee: individual cards now respond to hover (previously
+   only the whole track paused — hovering one card felt inert). Scoped to
+   hover-capable pointers so it doesn't fight touch/scroll on mobile. ---- */
+@media(hover:hover){
+  .rbp-card{transition:transform .3s cubic-bezier(.16,1,.3,1)}
+  .rbp-card:hover{transform:translateY(-8px)}
+  .rbp-card:hover .rbp-preview{box-shadow:0 30px 60px rgba(28,42,74,.22)}
+  .rbp-preview{transition:box-shadow .3s ease}
+}
+
