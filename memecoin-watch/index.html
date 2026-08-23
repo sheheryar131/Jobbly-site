@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#0b1220" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<title>$1 → $10 Watch</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color-scheme:dark;background:#07101d;color:#eef4ff}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#12213a 0,#07101d 42%,#050a12 100%);padding:20px}
+.app{max-width:680px;margin:0 auto}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#10243c;border:1px solid #1f4a74;font-size:14px}.dot{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 14px #4ade80}.muted{color:#8da3be}.card{background:rgba(14,25,43,.9);border:1px solid #1c324f;border-radius:22px;padding:18px;margin:14px 0;box-shadow:0 16px 40px rgba(0,0,0,.18)}h1{font-size:28px;line-height:1.05;margin:0}h2{font-size:15px;color:#a8bdd6;margin:0 0 10px;text-transform:uppercase;letter-spacing:.08em}.countdown{font-variant-numeric:tabular-nums;font-size:46px;font-weight:800;letter-spacing:-.04em}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.metric{background:#0a1727;border:1px solid #172b45;border-radius:16px;padding:14px}.metric strong{display:block;font-size:18px;margin-top:4px}.criteria{display:grid;gap:9px}.row{display:flex;gap:10px;align-items:flex-start}.check{width:20px;height:20px;border-radius:6px;background:#123223;color:#86efac;display:grid;place-items:center;font-weight:700;flex:0 0 auto}.btn{display:block;width:100%;text-align:center;text-decoration:none;border:none;border-radius:16px;padding:15px 16px;font-weight:750;font-size:16px;background:#2563eb;color:#fff;margin-top:10px}.btn.secondary{background:#111d2e;border:1px solid #29415f;color:#dce9f8}.small{font-size:13px;line-height:1.45}.footer{text-align:center;color:#71849a;font-size:12px;padding:8px 4px 24px}@media(max-width:460px){.grid{grid-template-columns:1fr}.countdown{font-size:40px}.top{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<main class="app">
+  <div class="top">
+    <div><div class="muted small">Solana memecoin monitor</div><h1>$1 → $10 Watch</h1></div>
+    <div class="badge"><span class="dot"></span> Monitoring active</div>
+  </div>
+
+  <section class="card">
+    <h2>Next scheduled scan</h2>
+    <div id="countdown" class="countdown">--:--</div>
+    <div class="muted small">Hourly schedule · Australia/Sydney</div>
+  </section>
+
+  <section class="grid">
+    <div class="metric"><span class="muted small">Last schedule tick</span><strong id="lastTick">—</strong></div>
+    <div class="metric"><span class="muted small">Target</span><strong>$1 → $10</strong></div>
+    <div class="metric"><span class="muted small">Market-cap zone</span><strong>$20K–$150K</strong></div>
+    <div class="metric"><span class="muted small">Alert rule</span><strong>Only if it qualifies</strong></div>
+  </section>
+
+  <section class="card">
+    <h2>What the watch is looking for</h2>
+    <div class="criteria">
+      <div class="row"><span class="check">✓</span><div>Very early Solana memecoin, tradable through Phantom</div></div>
+      <div class="row"><span class="check">✓</span><div>Meaningful liquidity and rapidly rising real volume/buyers</div></div>
+      <div class="row"><span class="check">✓</span><div>Mint/freeze authority disabled where verifiable</div></div>
+      <div class="row"><span class="check">✓</span><div>No obvious dangerous holder concentration or rug indicators</div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Status</h2>
+    <div id="statusText">Waiting for the next scheduled scan.</div>
+    <div class="muted small" style="margin-top:8px">This dashboard tracks the schedule locally. ChatGPT's private task results are not exposed to this webpage, so qualifying coin alerts still arrive through ChatGPT.</div>
+    <a class="btn" href="https://chatgpt.com/" target="_blank" rel="noopener">Open ChatGPT to check now</a>
+    <button class="btn secondary" id="installBtn" type="button" hidden>Install app</button>
+  </section>
+
+  <div class="footer">High-risk experimental watch. A 10× outcome is possible but losing the full $1 is more likely.</div>
+</main>
+<script>
+const tz='Australia/Sydney';
+const countdown=document.getElementById('countdown');
+const lastTick=document.getElementById('lastTick');
+const statusText=document.getElementById('statusText');
+function partsInSydney(d=new Date()){
+  const parts=new Intl.DateTimeFormat('en-AU',{timeZone:tz,hour12:false,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'}).formatToParts(d);
+  return Object.fromEntries(parts.filter(p=>p.type!=='literal').map(p=>[p.type,p.value]));
+}
+function update(){
+  const now=new Date(); const p=partsInSydney(now);
+  const mm=Number(p.minute), ss=Number(p.second);
+  let rem=(60-mm-1)*60+(60-ss); if(rem===3600) rem=0;
+  const m=Math.floor(rem/60), s=rem%60; countdown.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  const lastHour=new Date(now.getTime()-(mm*60+ss)*1000);
+  lastTick.textContent=new Intl.DateTimeFormat('en-AU',{timeZone:tz,hour:'numeric',minute:'2-digit',hour12:true}).format(lastHour);
+  statusText.textContent=rem<90?'Next scan is due shortly.':'Waiting for the next scheduled scan.';
+}
+update(); setInterval(update,1000);
+let deferredPrompt; const installBtn=document.getElementById('installBtn');
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.hidden=false});
+installBtn.addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;installBtn.hidden=true});
+if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+</script>
+</body>
+</html>
